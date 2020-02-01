@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const screen = document.querySelector("#screen");
   let eyeY = getComputedStyle(document.querySelector(".eye")).top;    // get position of the eye from CSS
   let eyeX = getComputedStyle(document.querySelector(".eye")).left;
-  eyeY = Number(eyeY.slice(0, -2));    // dripping "px" from the end
+  eyeY = Number(eyeY.slice(0, -2));    // dropping "px" from the end
   eyeX = Number(eyeX.slice(0, -2));
   
   // EVENT : reculculate eye location as the window resizing
@@ -28,15 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let yDiff = y - eyeY;
     let netDist = (xDiff ** 2 + yDiff ** 2 ) ** 0.5;
 
-    let xPos = 10 * xDiff / netDist + eyeX;     // calculate x using cos
-    let yPos = 10 * yDiff / netDist + eyeY;     // calculate y using sin
+    let xPos = 10 * xDiff / netDist + eyeX;     // cos
+    let yPos = 10 * yDiff / netDist + eyeY;     // sin
 
     document.querySelector(".eye").style.left = String(xPos) + "px";
     document.querySelector(".eye").style.top = String(yPos) + "px";    
     document.querySelector("#position").textContent = "X: " + xDiff + ", Y: " + yDiff + ", distance: " + netDist;
   })
 
-  // EVENT : eye location reset
+  // EVENT : eye location reset by clicking
   screen.addEventListener("click", () => {
     document.querySelector(".eye").style.left = String(eyeX) + "px";
     document.querySelector(".eye").style.top = String(eyeY) + "px"; 
