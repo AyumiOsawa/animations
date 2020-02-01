@@ -21,6 +21,9 @@ body {
 
 .bird {
   border: 1px solid red;
-  width: 30px;
-  visibility: hidden;
+  width: 60px;
+  margin: 0;
+  position: absolute;
+  /* visibility: hidden; */
+  transform: translateX(-50%) translateY(-50%);
 }
