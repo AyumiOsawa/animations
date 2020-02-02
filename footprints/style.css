@@ -11,7 +11,7 @@ body {
 }
 
 .text {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   font-size: 24px;
   margin: 0;
   position: absolute; 
@@ -20,7 +20,7 @@ body {
 }
 
 .bird {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 60px;
   margin: 0;
   position: absolute;
