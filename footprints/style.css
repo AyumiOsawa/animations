@@ -55,6 +55,14 @@ body {
   width: 100px;
   margin: 0;
   position: absolute;
-  /* visibility: hidden; */
+  visibility: hidden;
   transform: translateX(-50%) translateY(-50%);
+}
+
+.selected {
+  visibility: visible;
+}
+
+.current_walk {
+  visibility: hidden;
 }
