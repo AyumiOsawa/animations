@@ -1,0 +1,24 @@
+.bird {
+  /* border: 1px solid red; */
+  width: 60px;
+  margin: 0;
+  position: absolute;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.frog {
+  width: 100px;
+  margin: 0;
+  position: absolute;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.selected {
+  visibility: visible;
+}
+
+.current_walk {
+  visibility: hidden;
+}

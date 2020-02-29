@@ -1,0 +1,22 @@
+.btn_area {
+  width: 150px;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 5px;
+  width: 70px;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: rgb(247, 247, 247);
+  z-index: 1;
+}
+
+.btn--selected {
+  background-color: skyblue;
+}
