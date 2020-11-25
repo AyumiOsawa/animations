@@ -1,0 +1,10 @@
+.btn_container {
+  width: 150px;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
