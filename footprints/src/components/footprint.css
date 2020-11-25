@@ -1,0 +1,8 @@
+.component {
+  width: 80px;
+  position: fixed;
+}
+
+.stepping_foot {
+  visibility: hidden;
+}
