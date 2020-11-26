@@ -6,3 +6,7 @@
 .stepping_foot {
   visibility: hidden;
 }
+
+.foot {
+  transform-origin: center center;
+}
