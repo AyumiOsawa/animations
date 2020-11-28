@@ -33,10 +33,10 @@ function App() {
         />
       {isOn ?
         <div className="section--about--message">
-          "Go back to your cage now. Bye-bye"
+          "Click the cage to close."
         </div>
       : <div className="section--about--message">
-          "Click the door of the cage to open."
+          "Click the cage to open."
         </div>}
     </>
   )

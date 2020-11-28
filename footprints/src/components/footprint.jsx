@@ -10,7 +10,6 @@ import left_foot from '../bird_left.png';
 function Footprint({isOn}) {
   let shouldThrottle = useRef(false);
   // prev_x and prev_y are at the center at the beginning
-
   let prev_x = useRef(Math.max(document.documentElement.clientWidth/2 || 0, window.innerWidth/2 || 0));
   let prev_y = useRef(Math.max(document.documentElement.clientHeight/2 || 0, window.innerHeight/2 || 0) - 100);
   let doorCenter_x = useRef(prev_x);
@@ -18,7 +17,7 @@ function Footprint({isOn}) {
 
   const [position, setPosition] = useState({x: prev_x.current, y: prev_y.current});
 
-  const average_speed = 800;
+  const speed = 500;
   const R = document.getElementById('right_foot');
   const L = document.getElementById('left_foot');
   const door = document.getElementById("door");
@@ -40,8 +39,6 @@ function Footprint({isOn}) {
   }, []);
 
   const _updatePicture = (degree) => {
-    console.log('update pic');
-    console.log('position.x', position.x,'position.y',position.y);
     R.classList.toggle('stepping_foot');
     L.classList.toggle('stepping_foot');
     R.style.top = `${position['y']}px`;
@@ -53,9 +50,6 @@ function Footprint({isOn}) {
   }
 
   const drawFootprint = () => {
-    console.log('drawFootprint');
-    console.log('position.x', position.x,'position.y',position.y);
-
     const diff_x = position.x - prev_x.current;
     const diff_y = position.y - prev_y.current;
 
@@ -70,16 +64,12 @@ function Footprint({isOn}) {
 
 // keeping an eye on the change of isOn
   useEffect(() => {
-    console.log('isOn is toggled');
-    console.log('position.x', position.x,'position.y',position.y);
-
     const screen = document.querySelector('body');
-    const speed = average_speed + (Math.random() - 0.5) * 200;
-
     const getCursor = event => {
+
       if(!shouldThrottle.current) {
-        console.log('will throttle');
         shouldThrottle.current = true;
+        console.log('set position');
         setPosition({x: event.clientX, y: event.clientY});
         setTimeout(() => shouldThrottle.current = false, speed);
       }
@@ -89,7 +79,6 @@ function Footprint({isOn}) {
       screen.addEventListener('mousemove', getCursor);
     } else {
       screen.removeEventListener('mousemove', getCursor);
-      console.log('reset the position');
       door ? getDefaultPosition(door)
       : setPosition({x: prev_x.current, y: prev_y.current})
     }
@@ -99,7 +88,6 @@ function Footprint({isOn}) {
 // keep updating while isOn is true, keeping an eye on the change of position
   useEffect(() => {
     if(isOn) {
-      console.log('footprint redraw');
       drawFootprint();
     }
   }, [position]);
